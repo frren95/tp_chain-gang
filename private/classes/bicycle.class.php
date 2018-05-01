@@ -57,7 +57,7 @@ class Bicycle {
 
     public function condition(){
         if($this->condition_id>0){
-            return self::CONDITION_OPTIONS($this->condition_id);
+            return self::CONDITION_OPTIONS[$this->condition_id];
         } else {
             return "Unknown";
         }
