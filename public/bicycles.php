@@ -28,7 +28,7 @@
 
 <?php
 
-$parser = new ParseCSV(PRIVATE_PATH, '/used_bicycles.csv');
+$parser = new ParseCSV(PRIVATE_PATH . '/used_bicycles.csv');
 $bike_array = $parser->parse();
 
 print_r($bike_array);

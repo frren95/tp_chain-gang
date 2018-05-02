@@ -6,7 +6,7 @@ class ParseCSV {
     private $header;
     private $data=[];
 
-    public function __construct($filename) {
+    public function __construct($filename='') {
         if($filename != '') {
             $this->filename = $filename;
         }
