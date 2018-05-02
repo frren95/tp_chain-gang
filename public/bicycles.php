@@ -27,10 +27,17 @@
       </tr>
 
 <?php
+
+$parser = new ParseCSV(PRIVATE_PATH, '/used_bicycles.csv');
+$bike_array = $parser->parse();
+
+print_r($bike_array);
+
 $args =['brand' => 'Trek', 'model' => 'Emonda', 'year' => 2017, 'gender' => 'unisex', 'color' => 'black', 'category' => 'Road', 'weight_kg' => 11.3, 'price' => 250.00];
 $bike = new Bicycle($args);
 
 ?>
+      <?php for($i=0; $i <=10; $i++){ ?>
       <tr>
         <td><?php echo h($bike->brand); ?></td>
         <td><?php echo h($bike->model); ?></td>
@@ -42,6 +49,6 @@ $bike = new Bicycle($args);
         <td><?php echo h($bike->condition()); ?></td>
         <td><?php setLocale(LC_MONETARY, 'en_US'); echo h(money_format('%i', $bike->price)); ?></td>
       </tr>
-
+      <?php } ?>
     </table>
   </div>
